@@ -1,0 +1,30 @@
+html *,
+html *::after,
+html *::before {
+  box-sizing: border-box;
+  color: var(--black-2);
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+p,
+a,
+li {
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.3rem;
+}
+
+a {
+  text-decoration: none;
+}

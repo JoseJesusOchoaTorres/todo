@@ -1,0 +1,140 @@
+/************************************/
+/*** BACKGROUND COLORS
+/************************************/
+.hp-background-color-orange {
+    background-color: var(--orange);
+}
+
+.hp-background-color-yellow {
+    background-color: var(--yellow);
+}
+
+.hp-background-color-white {
+    background-color: var(--white);
+}
+
+.hp-background-color-green {
+    background-color: var(--green);
+}
+
+.hp-background-color-black {
+    background-color: var(--black);
+}
+
+.hp-background-color-blue {
+    background-color: var(--blue);
+}
+
+.hp-background-color-gray {
+    background-color: var(--gray);
+}
+
+.hp-background-color-red {
+    background-color: var(--red);
+}
+
+.hp-background-color-black-2 {
+    background-color: var(--black-2);
+}
+
+.hp-background-color-blue-2 {
+    background-color: var(--blue-2);
+}
+
+
+
+/************************************/
+/*** TEXT COLORS
+/************************************/
+.hp-text-color-orange {
+    text-color: var(--orange);
+}
+
+.hp-text-color-yellow {
+    text-color: var(--yellow);
+}
+
+.hp-text-color-white {
+    text-color: var(--white);
+}
+
+.hp-text-color-green {
+    text-color: var(--green);
+}
+
+.hp-text-color-black {
+    text-color: var(--black);
+}
+
+.hp-text-color-blue {
+    text-color: var(--blue);
+}
+
+.hp-text-color-gray {
+    text-color: var(--gray);
+}
+
+.hp-text-color-red {
+    text-color: var(--red);
+}
+
+.hp-text-color-black-2 {
+    text-color: var(--black-2);
+}
+
+.hp-text-color-blue-2 {
+    background-color: var(--blue-2);
+}
+
+
+
+/*************************************/
+/*** HEADINGS 
+/*************************************/
+.hp-h1 {
+  font-size: 2.5rem; /* 40px */
+}
+
+.hp-h2 {
+  font-size: 1.875rem; /* 30px */
+}
+
+.hp-h3 {
+  font-size: 1.562rem; /* 25px */
+}
+
+.hp-h4 {
+  font-size: 1.25rem; /* 20px */
+}
+
+.hp-small {
+  font-size: 0.875rem; /* 14px */
+}
+
+.hp-h1.hp-medium {
+  line-height: 3.4375rem;
+  font-size: 3.125rem; /* 50px */
+}
+
+.hp-h1.hp-large {
+  line-height: 4.0625rem;
+  font-size: 3.75rem; /* 60px */
+}
+
+.hp-fontsize-x25 {
+  line-height: 1.2em;
+  font-size: 2.5em;
+}
+
+
+
+/*************************************/
+/*** FONT-WEIGHT  
+/*************************************/
+.hp-bold {
+  font-weight: 400;
+}
+
+.hp-light {
+  font-weight: 100;
+}
