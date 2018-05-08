@@ -94,6 +94,14 @@
     color: var(--gray-2);
 }
 
+.hp-text-color-gray-3 {
+    color: var(--gray-3);
+}
+
+.hp-text-color-gray-4 {
+    color: var(--gray-4);
+}
+
 
 /*************************************/
 /*** HEADINGS 
@@ -115,7 +123,7 @@
 }
 
 .hp-small {
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.87rem;
 }
 
 .hp-h1.hp-medium {
@@ -139,9 +147,29 @@
 /*** FONT-WEIGHT  
 /*************************************/
 .hp-bold {
-  font-weight: 400;
+  font-weight: 900;
+  /* font-weight: 400; */
 }
 
 .hp-light {
   font-weight: 100;
+}
+
+
+
+/*************************************/
+/*** SPACING
+/*************************************/
+.hp-nospacing {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*************************************/
+/*** FLEX
+/*************************************/
+.hp-flex {
+    display: flex;
 }
