@@ -1,20 +1,9 @@
 /************************************/
-/*** MAIN
-/************************************/
-.main-container {
-  height: 100vh;
-  display: flex;
-  padding: 0 10vmin;
-  align-items: center;
-  justify-content: center;
-
-}
-
-/************************************/
 /*** MODAL CATEGORY
 /************************************/
 /*** MODAL CONTAINER ***/
 .modal-category-container {
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -143,3 +132,33 @@
     .navigation-category-button__save:focus {
       outline-width: 1px;
     }
+
+
+
+/************************************/
+/*** MAIN CONTAINER
+/************************************/
+.main-container {
+  min-height: 90vh;
+  margin-top: 4.47rem;
+  padding: 5vmax 10vmin;
+}
+
+
+
+/************************************/
+/*** CATEGORY CARD
+/************************************/
+.category-card__container {
+  border-radius: 0.2rem;
+  /* border: 1px solid var(--gray-2) */
+  box-shadow: 0 0 1px rgba(0,0,0,0.25);
+  max-width: 25%;
+}
+
+  .category-card__header {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0.5rem;
+    justify-content: center;
+  }
