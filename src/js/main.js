@@ -50,11 +50,34 @@ Vue.component('todo-list', {
       <div class="main-container">
         <div class="category-card__container   hp-background-color-gray">
           <div class="category-card__header" style="background-color: #42b983;">
-            <h4 class="hp-h1 hp-light hp-text-color-white hp-nospacing">WORK AT HOME</h4>
+            <h3 class="hp-h4 hp-light hp-text-color-white hp-nospacing">WORK AT HOME</h3>
           </div>
 
           <div class="category-card__content">
+            <div class="category-card__content--heading">
+              <h4>Pending tasks:</h4>
+              <div class="modal-category__rule"></div>
+            </div>
 
+            <label class="category-card__task hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label>
+
+            <div class="category-card__content--heading">
+              <h4>Finished tasks:</h4>
+              <div class="modal-category__rule"></div>
+            </div>
+
+            <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
           </div>
 
           <div class="category-card__footer">
