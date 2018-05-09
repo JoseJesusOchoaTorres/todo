@@ -3,7 +3,6 @@ html *::after,
 html *::before {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  color: var(--black-2);
   padding: 0;
   margin: 0;
 }

@@ -8,7 +8,7 @@ Vue.component('todo-list', {
         <nav class="navigation-nav">
           <ul class="navigation-ul">
             <li class="hp-nospacing">
-              <button class="navigation-category-button__save   hp-light" v-on:click="show_newCategoryModal(true)"><span class="hp-text-color-white hp-h4 hp-bold">+ &nbsp;</span> Create category</button>
+              <button class="navigation-category-button__save   hp-light" v-on:click="show_newCategoryModal(true)"><i class="hp-text-color-white material-icons">add&nbsp;</i> Create category</button>
             </li>
           </ul>
         </nav>
@@ -80,10 +80,14 @@ Vue.component('todo-list', {
             <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
           </div>
 
-          <div class="category-card__footer">
+          <div class="modal-category__rule"></div>
 
+          <div class="category-card__footer">
+            <button class="category-card-button__deleteTask   hp-light hp-small hp-background-color-gray" type="button" v-on:click="get_categoryInformation"><i class="category-card-button__deleteTask--icon   material-icons">delete</i> &nbsp;Detele category</button>
+            <button class="category-card-button__newTask   hp-light hp-small hp-background-color-green hp-text-color-white" type="button" v-on:click="get_categoryInformation"><i class="category-card-button__newTask--icon   material-icons hp-text-color-white">add</i> &nbsp;Create task</button>
           </div>
         </div>
+
       </div>
       <!--  CATEGORY-CARD-END -->
 

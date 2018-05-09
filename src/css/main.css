@@ -122,12 +122,17 @@
   padding: 1rem 10vmin;
   justify-content: space-between;
   box-shadow: 0 0 1px rgba(0,0,0,0.25);
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
   .navigation-ul {
     list-style: none;
   }
+    .navigation-category-button__save {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .navigation-category-button__save:focus {
       outline-width: 1px;
@@ -139,9 +144,12 @@
 /*** MAIN CONTAINER
 /************************************/
 .main-container {
-  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  /* max-height: 90vh; */
   margin-top: 4.47rem;
   padding: 5vmax 10vmin;
+  justify-content: space-between;
 }
 
 
@@ -149,8 +157,11 @@
 /************************************/
 /*** CATEGORY CARD
 /************************************/
+/** CONTAINER **/
 .category-card__container {
-  max-width: 25%;
+  /* width: 20%; */
+  width: 30%;
+  margin: 2rem;
   border-radius: 0.2rem;
   transition: box-shadow 0.2s;
   box-shadow: 0 0 1px rgba(0,0,0,0.25);
@@ -161,6 +172,7 @@
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 
+  /** HEADER **/
   .category-card__header {
     display: flex;
     align-items: center;
@@ -169,6 +181,7 @@
     box-shadow: 0 0 1px rgba(0,0,0,0.25);
   }
 
+  /** CONTENT **/
   .category-card__content {
     display: flex;
     max-height: 50vmin;
@@ -184,3 +197,50 @@
     .category-card__task:hover {
       /* cursor: pointer; */
     }
+
+  /** FOOTER **/
+  .category-card__footer {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+    .category-card-button__newTask,
+    .category-card-button__deleteTask {
+      border: none;
+      cursor: pointer;
+      margin: 0.3rem 0.5rem;
+      border-radius: 0.1rem;
+      padding: 0.7rem 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .category-card-button__newTask {
+      border: 1px solid var(--green);
+      transition: background-color 0.2s;
+    }
+
+    .category-card-button__newTask:hover {
+      border: 1px solid var(--green-2);
+      background-color: var(--green-2);
+    }
+    
+    .category-card-button__deleteTask {
+      color: var(--red);
+      transition: all 0.2s;
+      border: 1px solid var(--red);
+    }
+
+    .category-card-button__deleteTask:hover {
+      color: var(--white);
+      background-color: var(--red);
+    }
+
+      .category-card-button__newTask--icon,
+      .category-card-button__deleteTask--icon {
+        font-size: 0.87rem;
+      }
