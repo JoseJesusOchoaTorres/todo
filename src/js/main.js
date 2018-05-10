@@ -89,19 +89,27 @@ Vue.component('todo-list', {
               <div class="modal-category__rule"></div>
             </div>
 
-            <label class="category-card__task hp-small hp-text-color-gray-4 hp-light" v-for="task in category.tasks">
-              <input type="checkbox" id="cbox1" value="first_checkbox">
-              &nbsp; {{task.taskDescription}} <span class="category-card__task--dueDate" v-if="task.taskDueDate !== ''">{{(task.taskDueDate).split('T')[0]}} {{(task.taskDueDate).split('T')[1]}}</span>
-            </label>
-
+            <div v-for="task in category.tasks" v-if="task.taskStatusDone == false">
+              <input class="task" type="checkbox">
+              <label class="category-card__task hp-small hp-text-color-gray-4 hp-light">
+                &nbsp; <span class="category-card__task--description">{{task.taskDescription}}</span> 
+                &nbsp; <span class="category-card__task--dueDate" v-if="task.taskDueDate !== ''">{{(task.taskDueDate).split('T')[0]}} {{(task.taskDueDate).split('T')[1]}}</span>
+              </label>
+            </div>
             
-
             <div class="category-card__content--heading">
               <h4>Finished tasks:</h4>
               <div class="modal-category__rule"></div>
             </div>
 
-            <label class="category-card__task hp-done hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox" checked="true"> Este es mi primer checkbox</label>
+            <div v-for="task in category.tasks" v-if="task.taskStatusDone == true">
+              <input class="task" type="checkbox" checked>
+              <label class="category-card__task hp-small   hp-text-color-gray-4 hp-light hp-done">
+                &nbsp; <span class="category-card__task--description">{{task.taskDescription}}</span> 
+                &nbsp; <span class="category-card__task--dueDate" v-if="task.taskDueDate !== ''">{{(task.taskDueDate).split('T')[0]}} {{(task.taskDueDate).split('T')[1]}}</span>
+              </label>
+            </div>
+
           </div>
 
           <div class="modal-category__rule"></div>
@@ -172,7 +180,8 @@ Vue.component('todo-list', {
     get_taskInformation: function () {
       let taskInformation = {
         'taskDescription': this.taskDescription,
-        'taskDueDate': this.taskDueDate
+        'taskDueDate': this.taskDueDate,
+        'taskStatusDone': true
       }
       this.add_task(taskInformation)
     },
@@ -194,7 +203,6 @@ Vue.component('todo-list', {
     /** NEW CATEGORY MODAL **/
     remove_category: function (index) {
       this.categories.splice(index, 1)
-      console.log(this.categories)
     }
   },
   watch: {

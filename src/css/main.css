@@ -200,20 +200,30 @@
 
     .category-card__task {
       margin-bottom: 1rem;
+      line-height: 1.5rem;
     }
     
     .category-card__task:hover {
       /* cursor: pointer; */
     }
 
-      .category-card__task--dueDate {
-        font-size: 0.7rem;
-        margin-left: 1rem;
-        color: var(--white);
-        border-radius: 0.2rem;
-        padding: 0.3rem 0.5rem;
-        background: var(--gray-3)
+      .task:checked + .category-card__task .category-card__task--description {
+        text-decoration: line-through;
       }
+      
+      .task:checked + .category-card__task .category-card__task--dueDate {
+        background-color: var(--gray-2);
+      }
+
+        .category-card__task--dueDate {
+          font-size: 0.7rem;
+          line-break: 1.3rem;
+          color: var(--white);
+          transition: all 0.2s;
+          border-radius: 0.2rem;
+          padding: 0.3rem 0.5rem;
+          background: var(--gray-3);
+        }
 
   /** FOOTER **/
   .category-card__footer {
