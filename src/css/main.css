@@ -1,5 +1,5 @@
 /************************************/
-/*** MODAL CATEGORY
+/*** MODAL CATEGORY / MODAL TASK
 /************************************/
 /*** MODAL CONTAINER ***/
 .modal-category-container {
@@ -62,16 +62,22 @@
           margin-bottom: 1.5rem;
         }
 
-        .modal-category-form__name {
+        .modal-category-form__name,
+        .modal-category-form__dueDate {
           padding: 0.7rem;
         }
 
+        .modal-category-form__dueDate {
+          height: 2.586rem;
+        }
+        
         .modal-category-form__color:hover {
           cursor: pointer;
         }
 
         .modal-category-form__color:focus,
-        .modal-category-form__name:focus {
+        .modal-category-form__name:focus,
+        .modal-category-form__dueDate:focus {
           outline-width: 1px;
         }
 
@@ -114,7 +120,6 @@
 /*** NAVIGATION
 /************************************/
 .navigation-container {
-  top: 0;
   width: 100%;
   display: flex;
   position: fixed;
@@ -147,7 +152,6 @@
   display: flex;
   flex-wrap: wrap;
   /* max-height: 90vh; */
-  margin-top: 4.47rem;
   padding: 5vmax 10vmin;
   justify-content: space-between;
 }
@@ -159,8 +163,8 @@
 /************************************/
 /** CONTAINER **/
 .category-card__container {
-  /* width: 20%; */
-  width: 30%;
+  width: 25%;
+  /* width: 30%; */
   margin: 2rem;
   border-radius: 0.2rem;
   transition: box-shadow 0.2s;
@@ -204,7 +208,7 @@
     padding: 1rem;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
   
     .category-card-button__newTask,
