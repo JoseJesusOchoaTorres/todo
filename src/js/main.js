@@ -78,7 +78,7 @@ Vue.component('todo-list', {
 
       <!--  CATEGORY-CARD-BEGIN -->
       <div class="main-container">
-        <div class="category-card__container   hp-background-color-gray" v-for="category in categories">
+        <div class="category-card__container   hp-background-color-gray" v-for="(category, index) in categories">
           <div class="category-card__header" v-bind:style="{background: category.color}">
             <h3 class="hp-h4 hp-light hp-text-color-white hp-nospacing">{{(category.name).toUpperCase()}}</h3>
           </div>
@@ -107,8 +107,8 @@ Vue.component('todo-list', {
           <div class="modal-category__rule"></div>
 
           <div class="category-card__footer">
-            <button class="category-card-button__deleteTask   hp-light hp-small hp-background-color-gray" type="button" v-on:click="get_categoryInformation"><i class="category-card-button__deleteTask--icon   material-icons">delete</i> &nbsp;Detele category</button>
-            <button class="category-card-button__newTask   hp-light hp-small hp-background-color-green hp-text-color-white" type="button" v-on:click="show_newTaskModal(true); get_currentCategory(category.name);"><i class="category-card-button__newTask--icon   material-icons hp-text-color-white">add</i> &nbsp;Create task</button>
+            <button class="category-card-button__deleteTask   hp-light hp-small hp-background-color-gray" type="button" v-on:click="get_currentCategory(category.name, index); remove_category(index);"><i class="category-card-button__deleteTask--icon   material-icons">delete</i> &nbsp;Detele category</button>
+            <button class="category-card-button__newTask   hp-light hp-small hp-background-color-green hp-text-color-white" type="button" v-on:click="show_newTaskModal(true); get_currentCategory(category.name, index);"><i class="category-card-button__newTask--icon   material-icons hp-text-color-white">add</i> &nbsp;Create task</button>
           </div>
         </div>
 
@@ -120,6 +120,7 @@ Vue.component('todo-list', {
     return {
       /** CATEGORIES DATA **/
       currentCategory: '',
+      currentIndex: '',
       /** CATEGORIES DATA **/
       categories: [],
       categoryName: '',
@@ -138,8 +139,9 @@ Vue.component('todo-list', {
   },
   methods: {
     /** CURRENT CATEGORY **/
-    get_currentCategory: function (currentCategory) {
+    get_currentCategory: function (currentCategory, index) {
       this.currentCategory = currentCategory
+      this.currentIndex = index
     },
     /** NEW CATEGORY MODAL **/
     show_newCategoryModal: function (value) {
@@ -154,7 +156,8 @@ Vue.component('todo-list', {
       this.add_category(categoryInformation)
     },
     add_category: function (category) {
-      this.categories.push(this.categories[category.name] = category)
+      this.categories.push(category)
+      console.log(this.categories)
       this.clear_newCategoryModal()
     },
     clear_newCategoryModal: function () {
@@ -174,8 +177,7 @@ Vue.component('todo-list', {
       this.add_task(taskInformation)
     },
     add_task: function (taskInformation) {
-      this.categories[this.currentCategory].tasks.push(taskInformation)
-      console.log(this.categories)
+      this.categories[this.currentIndex].tasks.push(taskInformation)
       this.clear_newTaskModal()
     },
     clear_newTaskModal: function () {
@@ -188,6 +190,11 @@ Vue.component('todo-list', {
       if (this.categories == '') {
         this.show_newCategoryModal(true)
       }
+    },
+    /** NEW CATEGORY MODAL **/
+    remove_category: function (index) {
+      this.categories.splice(index, 1)
+      console.log(this.categories)
     }
   },
   watch: {
