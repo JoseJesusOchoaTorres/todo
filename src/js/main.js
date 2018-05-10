@@ -91,7 +91,7 @@ Vue.component('todo-list', {
 
             <label class="category-card__task hp-small hp-text-color-gray-4 hp-light" v-for="task in category.tasks">
               <input type="checkbox" id="cbox1" value="first_checkbox">
-              &nbsp; {{task.taskDescription}} <i class="hp-small">- {{task.taskDueDate}}</i>
+              &nbsp; {{task.taskDescription}} <span class="category-card__task--dueDate" v-if="task.taskDueDate !== ''">{{(task.taskDueDate).split('T')[0]}} {{(task.taskDueDate).split('T')[1]}}</span>
             </label>
 
             
@@ -131,6 +131,10 @@ Vue.component('todo-list', {
       taskDescription: '',
       taskModalVisible: false
     }
+  },
+  mounted () {
+    let self = this
+    self.check_noCategories()
   },
   methods: {
     /** CURRENT CATEGORY **/
@@ -178,6 +182,18 @@ Vue.component('todo-list', {
       this.taskDescription = ''
       this.taskDueDate = ''
       this.show_newTaskModal(false)
+    },
+    /** NO CATEGORIES **/
+    check_noCategories: function () {
+      if (this.categories == '') {
+        this.show_newCategoryModal(true)
+      }
+    }
+  },
+  watch: {
+    categories: function (val) {
+      localStorage.setItem('categories', val)
+      this.check_noCategories()
     }
   }
 })

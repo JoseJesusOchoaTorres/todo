@@ -202,6 +202,15 @@
       /* cursor: pointer; */
     }
 
+      .category-card__task--dueDate {
+        font-size: 0.7rem;
+        margin-left: 1rem;
+        color: var(--white);
+        border-radius: 0.2rem;
+        padding: 0.3rem 0.5rem;
+        background: var(--gray-3)
+      }
+
   /** FOOTER **/
   .category-card__footer {
     display: flex;
