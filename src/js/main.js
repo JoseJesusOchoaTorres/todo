@@ -89,7 +89,12 @@ Vue.component('todo-list', {
               <div class="modal-category__rule"></div>
             </div>
 
-            <label class="category-card__task hp-small hp-text-color-gray-4 hp-light"><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label>
+            <label class="category-card__task hp-small hp-text-color-gray-4 hp-light" v-for="task in category.tasks">
+              <input type="checkbox" id="cbox1" value="first_checkbox">
+              &nbsp; {{task.taskDescription}} <i class="hp-small">- {{task.taskDueDate}}</i>
+            </label>
+
+            
 
             <div class="category-card__content--heading">
               <h4>Finished tasks:</h4>
@@ -109,7 +114,6 @@ Vue.component('todo-list', {
 
       </div>
       <!--  CATEGORY-CARD-END -->
-
     </div>
   `,
   data () {
@@ -140,14 +144,14 @@ Vue.component('todo-list', {
     get_categoryInformation: function () {
       let categoryInformation = {
         'name': this.categoryName,
-        'color': this.categoryColor
+        'color': this.categoryColor,
+        'tasks': []
       }
       this.add_category(categoryInformation)
     },
     add_category: function (category) {
-      this.categories.push(category)
+      this.categories.push(this.categories[category.name] = category)
       this.clear_newCategoryModal()
-      console.log(this.categories)
     },
     clear_newCategoryModal: function () {
       this.categoryName = ''
@@ -163,10 +167,10 @@ Vue.component('todo-list', {
         'taskDescription': this.taskDescription,
         'taskDueDate': this.taskDueDate
       }
-      console.log(taskInformation)
       this.add_task(taskInformation)
     },
     add_task: function (taskInformation) {
+      this.categories[this.currentCategory].tasks.push(taskInformation)
       console.log(this.categories)
       this.clear_newTaskModal()
     },
